@@ -1,0 +1,62 @@
+README.md
+# 📊 SQL-Only Health Impact Analysis Using Pollution and Clinical Data
+
+This project analyzes the relationship between air pollution (PM2.5 and NO₂) and hospital admissions, mortality, and diagnostic patterns using **pure SQL** — no Python, no BI tools. It's based on real-world data collected from a tertiary care hospital in India.
+
+---
+
+## 🏥 About the Dataset
+
+- **Source:** [Kaggle – HDHI Health Pollution Dataset](https://www.kaggle.com/)
+- **Timeframe:** April 1, 2017 – March 31, 2019
+- **Institution:** Hero DMC Heart Institute, Ludhiana, Punjab, India
+- **Admissions:** 14,845 admissions (12,238 unique patients; 1,921 with repeat visits)
+- **Pollution Indicators:** Daily average PM2.5 and NO₂ levels
+
+---
+
+## 🧪 Project Objectives
+
+- Understand how spikes in PM2.5 and NO₂ correlate with:
+  - 📈 Hospital admissions
+  - ⚰️ Daily mortality counts
+  - 💉 Specific diagnoses (e.g., STEMI, AKI, Heart Failure)
+- Identify the most vulnerable populations by:
+  - 👴 Age
+  - 👨 Gender
+
+---
+
+## 🛠️ Tools Used
+
+- SQL (MySQL Workbench)
+- Raw `.csv` files joined across 3 datasets
+- Aggregation, filtering, JOINs, grouping, and condition-based breakdown
+
+---
+
+## 📌 Key SQL Insights
+
+### ✅ Step 1: Pollution vs Admissions
+- PM2.5 > 350 µg/m³ didn’t always spike admissions
+- However, combined PM2.5 + NO₂ levels > 150 consistently showed admission surges
+  - Example: Nov 13, 2017 → PM2.5 = 379, NO₂ = 151 → 30 admissions
+
+### ✅ Step 2: Pollution vs Mortality
+- High PM2.5 + NO₂ strongly linked to increased daily deaths
+  - Dec 3, 2017 → PM2.5 = 298, NO₂ = 214 → 3 deaths
+- PM2.5 alone sometimes correlated with deaths, even when NO₂ was low
+
+### ✅ Step 3: Who Is Most Affected?
+- **Top Diagnoses on polluted days**:
+  - ACS (Acute Coronary Syndrome): 1,121
+  - Heart Failure: 923
+  - AKI (Acute Kidney Injury): 821
+- **Mortality Trends**:
+  - Ages 60–75 most affected
+  - 65% of deaths were male patients
+
+---
+
+## 📁 Project Structure
+
